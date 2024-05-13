@@ -1,35 +1,16 @@
-<div>
-    <div>
-        <img src="" alt="">
+<div class="calc">
+    <div class="calc-header">
+        <img src="./assets/-logo.png" alt="MiBango_Logo">
         <p>
-            Cambia tus dolares y soles al instante!
+            Cambia tus dolares y soles al instante
         </p>
     </div>
+    <app-tasas></app-tasas>
     <div>
-        <p>Venta: S/. 3.72000</p>
-        <p>Compra: S/. 3.72965</p>
-    </div>
-    <div>
-        <div>
-            <span>
-                Tienes
-            </span>
-            <input type="text">
-            <span>
-                Dólares
-            </span>
+        <app-input-box tag="{{'Tienes'}}" currency="{{'Dolares'}}"></app-input-box>
+        <div class="calc-button">
+            <img src="./assets/arrows.png" alt="Intercambiar_Logo">
         </div>
-        <button>
-            <img src="" alt="">
-        </button>
-        <div>
-            <span>
-                Recibes
-            </span>
-            <input type="text">
-            <span>
-                Soles
-            </span>
-        </div>
+        <app-input-box tag="{{'Recibes'}}" currency="{{'Soles'}}"></app-input-box>
     </div>
 </div>

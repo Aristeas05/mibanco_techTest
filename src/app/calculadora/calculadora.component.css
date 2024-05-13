@@ -1,0 +1,25 @@
+.calc{
+    padding: 30px 20px;
+    border: 2px solid #00A64F;
+    border-radius: 20px;
+    .calc-header{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+    .calc-button{
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        img{
+            border-radius: 100px;
+            transition: 0.5s;
+            height: 85px;
+        }
+        img:hover{
+            box-shadow: 0px 4px 13px -4px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+    }
+}
