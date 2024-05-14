@@ -7,18 +7,8 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   templateUrl: './tasas.component.html',
   styleUrl: './tasas.component.css'
 })
-/*export class TasasComponent {
-  @Input() currency: string ;
-  ngOnChanges(changes: SimpleChanges) {
-        
-    this.doSomething(changes.currency.currentValue);
-    // You can also use categoryId.previousValue and 
-    // categoryId.firstChange for comparing old and new values
-    
-  }
-}*/
 
-export class TasasComponent{
+export class TasasComponent implements OnChanges{
 
   @Input() currency: string = '';
   @Input() currencySellValue: string = '';
@@ -28,8 +18,7 @@ export class TasasComponent{
   constructor() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    this.currencyBuyValue = +(parseFloat(this.currencySellValue) - parseFloat(this.currencySellValue)*0.01).toFixed(10);
-    console.log('algo: ', this.currencyBuyValue.toFixed(10));
+    this.currencyBuyValue = +(parseFloat(this.currencySellValue) - parseFloat(this.currencySellValue)*0.1).toFixed(10);
   }
 
   

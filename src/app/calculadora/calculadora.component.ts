@@ -22,6 +22,7 @@ export class CalculadoraComponent {
 
   initBaseCurrency: string = 'USD';
   initChangeCurrency: string = 'EUR';
+  baseCurrencySymbol: string = '$';
   initValue: number = 0;
   changeValue: number = 0;
   currency: number = 0;
@@ -31,7 +32,8 @@ export class CalculadoraComponent {
   }
 
   ngOnInit(): void{
-    this.llenarData();
+    this.callExchangeData();
+    this.callCurrencyData();
   }
 
   changeCurrency(){
@@ -40,11 +42,12 @@ export class CalculadoraComponent {
     
     this.initBaseCurrency = oldChange;
     this.initChangeCurrency = oldBase;
-    this.llenarData();
+    this.callExchangeData();
+    this.callCurrencyData();
   }
 
-  llenarData(){
-    this.apiService.getData(this.initBaseCurrency, this.initChangeCurrency).subscribe( data => {
+  callExchangeData(){
+    this.apiService.getExchangeData(this.initBaseCurrency, this.initChangeCurrency).subscribe( data => {
       this.resp = data;      
       let keys = this.resp.data;
       const map = new Map(Object.entries(keys));
@@ -52,4 +55,29 @@ export class CalculadoraComponent {
       console.log(this.resp);
     })
   }
+
+  callCurrencyData(){
+    this.apiService.getCurrencyData(this.initBaseCurrency).subscribe( rspn => { 
+      let keys = rspn.data;
+      const map = new Map(Object.entries(keys));
+      let currencySymbol = map.get(this.initBaseCurrency) as any;
+      this.baseCurrencySymbol = currencySymbol.symbol;
+      console.log(this.resp);
+    });
+  }
 }
+
+/*{
+  "data": {
+    "EUR": {
+      "symbol": "€",
+      "name": "Euro",
+      "symbol_native": "€",
+      "decimal_digits": 2,
+      "rounding": 0,
+      "code": "EUR",
+      "name_plural": "Euros",
+      "type": "fiat"
+    }
+  }
+}*/
