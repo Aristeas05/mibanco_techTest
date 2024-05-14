@@ -5,12 +5,30 @@
             Cambia tus dolares y soles al instante
         </p>
     </div>
-    <app-tasas></app-tasas>
+    <app-tasas currency="{{initBaseCurrency}}" currencySellValue="{{currency}}"></app-tasas>
     <div>
-        <app-input-box tag="{{'Tienes'}}" currency="{{'Dolares'}}"></app-input-box>
-        <div class="calc-button">
-            <img src="./assets/arrows.png" alt="Intercambiar_Logo">
+        <div>
+            <span class="tag-text">
+                Tienes
+            </span>
+            <input [(ngModel)]="initValue" type="text" class="inputBox" type="number">
+            <span class="exchange-text">
+                {{initBaseCurrency}}
+            </span>
         </div>
-        <app-input-box tag="{{'Recibes'}}" currency="{{'Soles'}}"></app-input-box>
+        <!--app-input-box tag="{{'Tienes'}}" currencyText="{{'Dolares'}}" valueQty="{{initValue}}"></app-input-box-->
+        <div class="calc-button">
+            <img src="./assets/arrows.png" alt="Intercambiar_Logo" (click)="changeCurrency()">
+        </div>
+        <!--app-input-box tag="{{'Recibes'}}" currencyText="{{'Soles'}}" valueQty="{{changeValue}}"></app-input-box-->
+        <div>
+            <span class="tag-text">
+                Recibes
+            </span>
+            <input [(ngModel)]="changeValue" type="text" class="inputBox" type="number" value="{{initValue*currency}}">
+            <span class="exchange-text">
+                {{initChangeCurrency}}
+            </span>
+        </div>
     </div>
 </div>
