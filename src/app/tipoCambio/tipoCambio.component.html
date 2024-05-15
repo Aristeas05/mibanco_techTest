@@ -1,0 +1,10 @@
+<div class="currency-box">
+    <span>De: </span>
+    <select name="selectA" #selectA (change)="onSelectedCurrent(selectA.value)">
+        <option *ngFor="let selectKey of selectKeys;index as i" [value]="selectKey" [selected]="baseCurrency === selectKey" >{{selectKey}}</option>
+    </select>
+    <span>A: </span>
+    <select name="selectB" #selectB (change)="onSelectedToConvert(selectB.value)">
+        <option *ngFor="let selectKey of selectKeys;index as i" [value]="selectKey" [selected]="convertCurrency === selectKey">{{selectKey}}</option>
+    </select>
+</div>

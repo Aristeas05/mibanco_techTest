@@ -1,0 +1,19 @@
+.currency-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    select{
+        margin: 10px 20px;
+        border-radius: 5px;
+        height: 50px;
+        padding: 5px 20px;
+        font-size: 18px;
+        border: none;
+        background-color: #E5F6EB;
+    }
+    select:hover, select:focus, select:focus-visible{
+        background-color: #E5F6EB;
+        border: none;
+        border-radius: 5px;
+    }
+}
