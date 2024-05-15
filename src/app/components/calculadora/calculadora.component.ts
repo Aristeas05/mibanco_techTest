@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TasasComponent } from '../tasas/tasas.component';
 import { FormsModule } from '@angular/forms';
-import { ApiService } from '../service/api.service';
+import { ApiService } from '../../service/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ChooseCurrencyComponent } from '../tipoCambio/tipoCambio.component';
 
