@@ -1,13 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
-  selector: 'app-choose-currency',
+  selector: 'app-tipoCambio',
   standalone: true,
-  imports: [CommonModule],
-  templateUrl: './choose-currency.component.html',
-  styleUrl: './choose-currency.component.css'
+  imports: [CommonModule, HttpClientModule],
+  templateUrl: './tipoCambio.component.html',
+  styleUrl: './tipoCambio.component.css'
 })
 export class ChooseCurrencyComponent {
 
@@ -30,21 +31,20 @@ export class ChooseCurrencyComponent {
   callCurrencyList(): void{
     this.apiService.getAllCurrencies().subscribe( rspn => { 
       this.selectKeys = Object.keys(rspn.data);
-    });
+    },
+    err => console.log('HTTP Error: ', err),
+    () => console.log('HTTP request completed.')
+  );
   }
 
   onSelectedCurrent(value:string): void {
 		this.baseCurrency = value;
     this.newBaseCurrency.emit(value);
-    console.log(this.baseCurrency);
-    
-    
 	}
 
   onSelectedToConvert(value:string): void {
 		this.convertCurrency = value;
     this.newConvertCurrency.emit(value);
-    console.log(this.convertCurrency);
 	}
 
 }

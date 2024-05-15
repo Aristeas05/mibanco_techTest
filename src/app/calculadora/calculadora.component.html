@@ -2,17 +2,17 @@
     <div class="calc-header">
         <img src="./assets/-logo.png" alt="MiBango_Logo">
         <p>
-            Cambia tus dolares y soles al instante
+            Cambia tu dinero al instante
         </p>
     </div>
     <app-tasas currency="{{baseCurrencySymbol}}" currencySellValue="{{currency}}"></app-tasas>
-    <app-choose-currency (newBaseCurrency)="onSelectedCurrent($event)" (newConvertCurrency)="onSelectedToConvert($event)" baseCurrency="{{initBaseCurrency}}" convertCurrency="{{initChangeCurrency}}"></app-choose-currency>
+    <app-tipoCambio (newBaseCurrency)="onSelectedCurrent($event)" (newConvertCurrency)="onSelectedToConvert($event)" baseCurrency="{{initBaseCurrency}}" convertCurrency="{{initChangeCurrency}}"></app-tipoCambio>
     <div>
-        <div>
+        <div class="inputData">
             <span class="tag-text">
                 Tienes
             </span>
-            <input [(ngModel)]="initValue" type="text" class="inputBox" type="number">
+            <input [(ngModel)]="initValue" type="text" class="inputBox" type="number" value="{{initValue}}">
             <span class="exchange-text">
                 {{initBaseCurrency}}
             </span>
@@ -20,7 +20,7 @@
         <div class="calc-button">
             <img src="./assets/arrows.png" alt="Intercambiar_Logo" (click)="changeCurrency()">
         </div>
-        <div>
+        <div class="inputData">
             <span class="tag-text">
                 Recibes
             </span>
