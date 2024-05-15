@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ApiService } from '../service/api.service';
+import { ApiService } from '../../service/api.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 

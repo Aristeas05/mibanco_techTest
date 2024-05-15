@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { CalculadoraComponent } from './calculadora/calculadora.component';
+import { CalculadoraComponent } from './components/calculadora/calculadora.component';
 
 describe('AppComponent', () => {
 
