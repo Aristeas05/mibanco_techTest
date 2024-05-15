@@ -21,4 +21,8 @@ export class ApiService {
   public getCurrencyData(baseCoin: string): Observable<any>{
     return this.http.get<any>(this.URL_CURRENCYDATA_API+'&currencies='+baseCoin);
   }
+
+  public getAllCurrencies(): Observable<any>{
+    return this.http.get<any>(this.URL_CURRENCYDATA_API);
+  }
 }

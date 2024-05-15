@@ -4,11 +4,12 @@ import { InputBoxComponent } from '../input-box/input-box.component';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../service/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ChooseCurrencyComponent } from '../choose-currency/choose-currency.component';
 
 @Component({
   selector: 'app-calculadora',
   standalone: true,
-  imports: [TasasComponent, InputBoxComponent, FormsModule, HttpClientModule],
+  imports: [TasasComponent, InputBoxComponent, FormsModule, HttpClientModule, ChooseCurrencyComponent],
   templateUrl: './calculadora.component.html',
   styleUrl: './calculadora.component.css',
   providers: [ApiService]
@@ -32,6 +33,11 @@ export class CalculadoraComponent {
   }
 
   ngOnInit(): void{
+    this.executeAPIS()
+  }
+
+  //Parent Methods
+  executeAPIS(){
     this.callExchangeData();
     this.callCurrencyData();
   }
@@ -42,8 +48,7 @@ export class CalculadoraComponent {
     
     this.initBaseCurrency = oldChange;
     this.initChangeCurrency = oldBase;
-    this.callExchangeData();
-    this.callCurrencyData();
+    this.executeAPIS()
   }
 
   callExchangeData(){
@@ -52,7 +57,6 @@ export class CalculadoraComponent {
       let keys = this.resp.data;
       const map = new Map(Object.entries(keys));
       this.currency = map.get(this.initChangeCurrency) as number;
-      console.log(this.resp);
     })
   }
 
@@ -62,22 +66,17 @@ export class CalculadoraComponent {
       const map = new Map(Object.entries(keys));
       let currencySymbol = map.get(this.initBaseCurrency) as any;
       this.baseCurrencySymbol = currencySymbol.symbol;
-      console.log(this.resp);
     });
   }
-}
 
-/*{
-  "data": {
-    "EUR": {
-      "symbol": "€",
-      "name": "Euro",
-      "symbol_native": "€",
-      "decimal_digits": 2,
-      "rounding": 0,
-      "code": "EUR",
-      "name_plural": "Euros",
-      "type": "fiat"
-    }
+  //Output Child Methods
+  onSelectedCurrent(newItem: string){
+    this.initBaseCurrency = newItem;
+    this.executeAPIS();
   }
-}*/
+
+  onSelectedToConvert(newItem: string){
+    this.initChangeCurrency = newItem;
+    this.executeAPIS();
+  }
+}

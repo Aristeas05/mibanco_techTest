@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,8 +8,16 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './input-box.component.html',
   styleUrl: './input-box.component.css'
 })
-export class InputBoxComponent {
+export class InputBoxComponent implements OnChanges{
   @Input() tag: string = "";
   @Input() currencyText: string = "";
+  @Input() valueMdl: string = "";
   @Input() valueQty: string = "";
+
+  constructor() {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    //this.valueQty = parseFloat(this.valueQty.currentValue);
+    console.log('Changos: ', changes);
+  }
 }

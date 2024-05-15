@@ -17,7 +17,7 @@ export class TasasComponent implements OnChanges{
   
   constructor() { }
 
-  ngOnChanges(changes: SimpleChanges) {
+  ngOnChanges(changes: SimpleChanges): void {
     this.currencyBuyValue = +(parseFloat(this.currencySellValue) - parseFloat(this.currencySellValue)*0.1).toFixed(10);
   }
 
