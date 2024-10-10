@@ -17,3 +17,6 @@ La API no contenia la moneda Soles o PEN, asi que se adapto el caso a las moneda
 ## Puntos Completados del reto
 Se completaron todos los puntos principales del reto tecnico a excepcion del que menciona usar "Bearer Token".
 Ya que no especifica el Token a usar y para ello tambien se tendria que diseñar un Login de la mano del backend que proporcionase el mencionado token para la validacion al hacer el login
+
+## Observaciones
+Al usar una libreria para hacer el Stepper y Tab, hay estilos que no se pudieron modificar, ya que requieren más tiempo en su manipulacion
