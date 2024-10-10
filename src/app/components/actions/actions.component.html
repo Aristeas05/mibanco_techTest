@@ -1,0 +1,59 @@
+<div class="actions">
+    <p class="actions__title">¿Que deseas hacer hoy?</p>
+    <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start">
+        <mat-tab label="Quiero enviar" >
+            <div class="actions__explanation">
+                <p class="actions__general-title">Podras hacerlo en solo 4 pasos</p>
+                <mat-vertical-stepper [linear]="false" #stepper>
+                  <mat-step>
+                      <ng-template matStepLabel><strong>Acércate a una de las 5 agencias</strong> con tu DNI.</ng-template>
+                  </mat-step>
+                  <mat-step>
+                      <ng-template matStepLabel>Ten a la mano los <strong>datos personales del destinatario.</strong></ng-template>
+                  </mat-step>
+                  <mat-step>
+                    <ng-template matStepLabel>Realiza con nosotros <strong>el cambio de moneda del monto que enviarás.</strong></ng-template>
+                  </mat-step>
+                  <mat-step>
+                    <ng-template matStepLabel>Finalmente, pronto el dinero <strong>llegará a su destino.</strong></ng-template>
+                  </mat-step>
+                </mat-vertical-stepper>
+            </div>
+            <div class="actions__description">
+                <img src="./assets/enviar.png" alt="">
+                <div>
+                    <p class="actions__description-title">
+                        ¿Cuanto me cuesta el envio?
+                    </p>
+                    <p class="actions__description-text">
+                        Conoce los costos a cada país y las modalidades de envío.
+                    </p>
+                    <div class="actions__description-buttonArea">
+                        <span (click)="downloadPDF()">
+                          Ver tarifario WU
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Quiero recibir">
+            <div class="actions__explanation">
+              <p class="actions__general-title">Podras hacerlo en solo 4 pasos</p>
+              <mat-vertical-stepper [linear]="false" #stepper>
+                <mat-step>
+                    <ng-template matStepLabel><strong>Acércate a una de las 5 agencias</strong> con tu Documento de Identidad.</ng-template>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel><strong>Indica el código MTCN</strong> de 10 dígitos.</ng-template>
+                </mat-step>
+                <mat-step>
+                  <ng-template matStepLabel><strong>Responde unas preguntas</strong> de validación.</ng-template>
+                </mat-step>
+                <mat-step>
+                  <ng-template matStepLabel><strong>Indica en qué moneda</strong> quieres recibir tu dinero. ¡Y listo! </ng-template>
+                </mat-step>
+              </mat-vertical-stepper>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

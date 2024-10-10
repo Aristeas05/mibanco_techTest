@@ -5,7 +5,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './tasas.component.html',
-  styleUrl: './tasas.component.css'
+  styleUrl: './tasas.component.scss'
 })
 
 export class TasasComponent implements OnChanges{

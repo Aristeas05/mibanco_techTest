@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
   standalone: true,
   imports: [CommonModule, HttpClientModule],
   templateUrl: './tipoCambio.component.html',
-  styleUrl: './tipoCambio.component.css'
+  styleUrl: './tipoCambio.component.scss'
 })
 export class ChooseCurrencyComponent {
 
