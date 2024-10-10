@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CalculadoraComponent } from './calculadora.component';
-import { TasasComponent } from '../tasas/tasas.component';
-import { ChooseCurrencyComponent } from '../../tipoCambio/tipoCambio.component';
+import { TasasComponent } from '../../components/tasas/tasas.component';
+import { ChooseCurrencyComponent } from '../../components/tipoCambio/tipoCambio.component';
 
 describe('CalculadoraComponent', () => {
   let component: CalculadoraComponent;

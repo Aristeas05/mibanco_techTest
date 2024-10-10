@@ -1,0 +1,63 @@
+@import '../../constants/colors.scss';
+@import '../../constants/styles.scss';
+
+.footer{
+    font-family:'Times New Roman', Times, serif;
+    padding: 42px 65px;
+    background-color: $mibanco_green;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    span{
+        color: $white;
+    }
+    &__firstContent{
+        font-size: 13px;
+        p:first-child {
+          color: $mibanco_yellow;
+        }
+        p:not(:first-child){
+            color: $white;
+        }
+        &-logoImg{
+            width: 134px;
+        }
+        @media (max-width: 768px) {
+            padding-bottom: 16px;
+            text-align: center;
+        }
+    }
+    &__midContent{
+        @extend %dsp-flx-sb-fs;
+        @extend %mq-dsp-flx-c-se;
+        padding: 0px 92px;
+        gap: 16px;
+        p:first-child {
+            color: $mibanco_yellow;
+        }
+        p:not(:first-child){
+            color: $white;
+            font-family: 'Lato';
+        }
+        @media (max-width: 768px) {
+          padding: 0px !important;
+          text-align: center;
+        }
+    }
+    &__lastContent{
+        @extend %dsp-flx-c-se;
+        @extend %mq-dsp-flx-c-se;
+        font-size: 13px;
+        font-family: 'Lato';
+        @media (max-width: 768px) {
+          padding-top: 16px;
+          display: flex;
+        }
+    }
+}

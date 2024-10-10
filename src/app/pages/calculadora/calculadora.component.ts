@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { TasasComponent } from '../tasas/tasas.component';
+import { TasasComponent } from '../../components/tasas/tasas.component';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../service/api.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ChooseCurrencyComponent } from '../tipoCambio/tipoCambio.component';
+import { ChooseCurrencyComponent } from '../../components/tipoCambio/tipoCambio.component';
 
 @Component({
   selector: 'app-calculadora',
   standalone: true,
   imports: [TasasComponent, FormsModule, HttpClientModule, ChooseCurrencyComponent],
   templateUrl: './calculadora.component.html',
-  styleUrl: './calculadora.component.css',
+  styleUrl: './calculadora.component.scss',
   providers: [ApiService]
 })
 

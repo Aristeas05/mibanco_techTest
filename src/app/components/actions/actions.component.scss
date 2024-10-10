@@ -1,0 +1,114 @@
+@import '../../constants/colors.scss';
+@import '../../constants/styles.scss';
+@import '../../../custom-theme.scss';
+
+.actions{
+    padding: 96px 108px;
+    @media (max-width: 768px) {
+      padding: 16px 8px;
+    }
+    &__title{
+        font-weight: 700;
+        font-size: 40px;
+        font-family: 'BreviaR';
+        text-align: center;
+        margin-bottom: 72px;
+        @media (max-width: 768px) {
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+    }
+    
+    &__general{
+        &-title{
+            font-size: 24px;
+            font-family: 'Lato';
+            font-weight: 400;
+            padding-left: 24px;
+            @extend %mq-txt-sz-16;
+        }
+    }
+    &__explanation{
+        padding: 16px 105px;
+        @media (max-width: 768px) {
+            padding: 8px 24px;
+        }
+    }
+    &__description{
+        @extend %dsp-flx-c-fs;
+        gap: 42px;
+        padding: 16px 90px;
+        font-family: 'BreviaR';
+        @media (max-width: 768px) {
+            display: block;
+            padding: 8px 16px;
+            img{
+                width: 100%;
+            }
+        }
+        img{
+            border-radius: 24px;
+        }
+        &-title{
+            font-size: 32px;
+            @media (max-width: 768px) {
+                font-size: 24px;
+                text-align: center;
+            }
+        }
+        &-text{
+            font-size: 24px;
+            padding-bottom: 48px;
+            margin-bottom: 0px;
+            font-family: 'Lato';
+            @media (max-width: 768px) {
+                font-size: 16px;
+                text-align: center;
+            }
+        }
+        &-buttonArea{
+            padding-bottom: 32px;
+            @media (max-width: 768px) {
+                text-align: center;
+            }
+            span{
+                cursor: pointer;
+                padding: 20px 36px;
+                background-color: $mibanco_green;
+                color: $white;
+                border-radius: 100px;
+                font-size: 24px;
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                    padding: 12px 24px;
+                }
+            }
+        }
+    }
+}
+
+//Ang Material Stys
+.mdc-tab__content{
+    .mdc-tab__text-label{
+        color: $mibanco_green;
+        font-weight: 700;
+    }
+    font-size: 24px;
+    font-family: 'BreviaR';
+    @extend %mq-txt-sz-16;
+}
+.mat-mdc-tab .mdc-tab-indicator__content--underline {
+    border-color: $mibanco_green !important;
+}
+.mat-step-icon-selected{
+    @extend %icn-mtrl-sty;
+}
+.mat-step-icon{
+    @extend %icn-mtrl-sty;
+}
+.mat-step-text-label{
+    font-family: 'Lato';
+    font-size: 24px;
+    line-height: 30px;
+    @extend %mq-txt-sz-16;
+}

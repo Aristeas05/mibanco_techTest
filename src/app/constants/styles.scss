@@ -1,0 +1,53 @@
+%dsp-flx-sb-c {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+%dsp-flx-sb-fs{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+%dsp-flx-c-se{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+%dsp-flx-c-fs{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+%icn-mtrl-sty{
+  font-size: 24px;
+  background-color: transparent !important;
+  color: $mibanco_black !important;
+  border: 1px solid $mibanco_gray !important;
+  border-radius: 25px !important;
+  font-family: 'BreviaR';
+  font-weight: 600;
+  height: 40px !important;
+  width: 40px !important;
+  @extend %mq-txt-sz-16;
+  @media (max-width: 768px) {
+    height: 24px !important;
+    width: 24px !important;
+  }
+}
+
+%mq-dsp-flx-c-se{
+  @media (max-width: 768px) {
+    display: block;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+}
+
+%mq-txt-sz-16{
+  @media (max-width: 768px) {
+      font-size: 16px !important;
+  }
+}

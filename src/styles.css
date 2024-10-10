@@ -7,7 +7,17 @@
     font-family: 'BreviaR';
     src: url('assets/fonts/brevia-regular.otf');
 }
+@font-face {
+    font-family: 'Lato';
+    src: url('./assets/fonts/lato-regular.ttf');
+}
 
 body{
     font-family: 'BreviaR';
+    margin: 0px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,10 @@
+@import '../../constants/colors.scss';
+@import '../../constants/styles.scss';
+
+.banner{
+    @media (max-width: 768px) {
+      & img{
+        width: 100%;
+      }
+    }
+}
